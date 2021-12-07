@@ -18,7 +18,7 @@ html {
   margin: auto;
   padding: 0 30px;
 }
-.navbar {
+.navbar-1 {
   width: 100%;
   /* background: crimson; */
   background-color: cadetblue;
@@ -28,21 +28,21 @@ html {
   font-family: "Ubuntu", sans-serif;
   transition: all 0.5s ease;
 }
-.navbar.sticky {
+.navbar-1.sticky {
   padding: 10px 0px;
   background-color: crimson;
 }
-.navbar .max-width {
+.navbar-1 .max-width {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.navbar .logo a {
+.navbar-1 .logo-1 a {
   color: #fff;
   font-size: 35px;
   font-weight: 600;
 }
-.navbar-item input {
+.navbar-item-1 input {
   font-size: 18px;
   padding: 7px;
   border-radius: 10px;
@@ -51,15 +51,26 @@ html {
   outline: none;
   transition: all 0.3s ease;
 }
-.navbar-item input:focus {
+.navbar-item-1 input:focus {
   border: 2px solid grey;
 }
-.navbar .logo a span {
+
+.navbar-1 .logo-1 a {
+  text-decoration: none;
+  border: none;
+}
+.navbar-1 .logo-1 span {
   color: black;
 }
-.navbar .menu li {
+.navbar-1 .menu {
+  margin-bottom: 0;
+}
+.navbar-1 .menu li {
   list-style: none;
   display: inline;
+}
+.navbar-item-1 a {
+  text-decoration: none;
 }
 .navbar-text-item {
   color: black;
@@ -73,11 +84,11 @@ html {
   color: aliceblue;
   border-bottom: 3px solid aliceblue;
 }
-.navbar.sticky .menu li a:hover {
+.navbar-1.sticky .menu li a:hover {
   color: #fff;
 }
 
-.navbar .menu-btn {
+.navbar-1 .menu-btn {
   color: #fff;
   font-size: 23px;
   cursor: pointer;
@@ -92,14 +103,14 @@ html {
   .max-width {
     padding: 0 25px;
   }
-  .navbar .menu-btn {
+  .navbar-1 .menu-btn {
     display: block;
     z-index: 999;
   }
   /* .menu-btn i.active:before {
     content: "\f00d";
   } */
-  .navbar .menu {
+  .navbar-1 .menu {
     position: fixed;
     background-color: cadetblue;
     height: 100vh;
@@ -110,15 +121,22 @@ html {
     padding-top: 80px;
     transition: all 0.4s ease-in-out;
   }
-  .navbar .menu.active {
+  .navbar-1 .menu.active {
     left: 0;
   }
-  .navbar .menu li {
+  .navbar-1 .menu li {
     display: block;
+    margin-left: -50px;
   }
-  .navbar .menu li a {
+  .navbar-1 .menu li a {
     display: inline-block;
     margin: 20px 0;
     font-size: 25px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .navbar-1 .menu {
+    width: 120vw;
+    height: 120vh;
   }
 }

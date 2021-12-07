@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home';
 import NotesState from './context/notes/NotesState';
+import Notes from './Components/Notes';
 import {
   BrowserRouter as Router,
   Routes, Route
@@ -13,10 +14,11 @@ function App() {
       <NotesState>
         <Router>
           <Navbar />
-          <div className="container">
+          <div className="container-1">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
+              <Route exact path="/yournotes" element={<Notes />} />
             </Routes>
           </div>
         </Router>

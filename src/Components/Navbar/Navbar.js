@@ -7,18 +7,19 @@ const Navbar = () => {
     const [toggleClass, settoggleClass] = useState(true);
 
     useEffect(() => {
-        console.log(location.pathname);
+        // console.log(location.pathname);
     }, [location]);
 
     return (
         <div>
-            <nav className="navbar">
+            <nav className="navbar-1">
                 <div className="max-width">
-                    <div className="logo"><Link to="/">The-<span>Notes.</span></Link></div>
+                    <div className="logo-1"><Link to="/">The-<span>Notes.</span></Link></div>
                     <ul className={toggleClass ? "menu" : "menu active"}>
-                        <li className="navbar-item"><Link to="/" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/" ? "current" : ""}`}>Home</span></Link></li>
-                        <li className="navbar-item"><Link to="/about" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/about" ? "current" : ""}`}>About</span></Link></li>
-                        <li className="navbar-item"><input type="text" placeholder="Search" /></li>
+                        <li className="navbar-item-1"><Link to="/" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/" ? "current" : ""}`}>Home</span></Link></li>
+                        <li className="navbar-item-1"><Link to="/about" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/about" ? "current" : ""}`}>About</span></Link></li>
+                        <li className="navbar-item-1"><Link to="/yournotes" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/yournotes" ? "current" : ""}`}>MyNotes</span></Link></li>
+                        <li className="navbar-item-1"><input type="text" placeholder="Search" /></li>
                     </ul>
                     <div className="menu-btn">
                         <i className=" fa fa-bars" onClick={() => settoggleClass(!toggleClass)}></i>

@@ -1,11 +1,10 @@
 import React from 'react'
-// import { useContext } from 'react'
-// import noteContext from '../context/notes/noteContext';
+import "./Home.css"
 const About = () => {
     document.title = "Notes - (About)";
 
     return (
-        <div>
+        <div className="notes-container">
             <div style={{ paddingTop: "70px" }}></div>
             <h1>This is about page</h1>
         </div>

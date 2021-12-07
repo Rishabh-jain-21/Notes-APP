@@ -1,9 +1,13 @@
-.container {
+* {
+  margin: 0;
+  padding: 0;
+}
+.container-1 {
   padding: 0px 15vw;
 }
 
 @media screen and (max-width: 650px) {
-  .container {
+  .container-1 {
     padding: 0px 10px;
   }
 }

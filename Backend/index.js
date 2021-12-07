@@ -1,15 +1,13 @@
 // this is the main file , act as an entry point for the backend
 const connectToMongo = require('./db');
 const express = require('express')
+var cors = require('cors')
 connectToMongo();
+
 const app = express()
 const port = 5000
-//Available routes
-// app.get('/', (req, res) => {
-//     res.send('Hello Rishabh!')
-// })
 
-//middle ware to send data to api in json
+app.use(cors())
 app.use(express.json());
 
 app.use("/api/auth", require('./routes/auth'));
