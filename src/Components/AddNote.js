@@ -3,7 +3,7 @@ import "./Home.css"
 import Notes from './Notes';
 import noteContext from '../context/notes/noteContext';
 
-const AddNote = () => {
+const AddNote = (props) => {
 
     const context = useContext(noteContext);
     const { addNote } = context;
@@ -14,6 +14,7 @@ const AddNote = () => {
         //preventing default load
         e.preventDefault();
         addNote(notecontent.title, notecontent.description, notecontent.tag);
+        props.showAlert("Note added successfully", "success");
     };
 
     //onchange
@@ -24,7 +25,6 @@ const AddNote = () => {
 
     return (
         <div>
-            <div style={{ paddingTop: "70px" }}></div>
             <form className="form-container">
                 <div className="title-container">
                     <label htmlFor="title">Enter Title</label>
@@ -40,7 +40,7 @@ const AddNote = () => {
                 </div>
                 <button disabled={notecontent.title.length < 5 || notecontent.description.length < 5} type="submit" id="submit-id" onClick={handleClick} >+ </button>
             </form>
-            <Notes />
+            <Notes showAlert={props.showAlert} />
         </div>
     )
 }

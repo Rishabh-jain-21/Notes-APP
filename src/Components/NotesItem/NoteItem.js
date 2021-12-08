@@ -12,7 +12,7 @@ const NoteItem = (props) => {
             <div style={{ display: 'flex', width: "100%", justifyContent: "space-between" }}>
                 <div className="card-title"><b>{note.title}</b></div>
                 <div className="button-container">
-                    <div className="card-icon1"><img src={deleteimg} alt="deletephotu" onClick={() => deleteNode(note._id)} /></div>
+                    <div className="card-icon1"><img src={deleteimg} alt="deletephotu" onClick={() => { deleteNode(note._id); props.showAlert("Note Deleted SuccessFully", "success"); }} /></div>
                     <div className="card-icon2"><img src={edit} alt="editphotu" onClick={() => { updateNote(note) }} /></div>
                 </div>
             </div>

@@ -110,6 +110,17 @@ html {
   cursor: pointer;
   display: none;
 }
+.log-out-btn {
+  background-color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 30px;
+  color: cadetblue;
+}
+.log-out-btn:hover {
+  color: #fff;
+}
 @media (max-width: 1300px) {
   .home .max-width {
     margin-left: 0px;
@@ -129,8 +140,8 @@ html {
   .navbar-1 .menu {
     position: fixed;
     background-color: cadetblue;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     left: 100%;
     top: 0;
     text-align: center;
@@ -149,23 +160,27 @@ html {
     margin: 20px 0;
     /* font-size: 25px; */
   }
-  .navbar-item-1 button {
+  .navbar-item-1 button,
+  .log-out-btn {
     background-color: cadetblue;
   }
-  .navbar-item-1 button a {
+  .navbar-item-1 button a,
+  .log-out-btn {
     color: black;
     text-align: center;
     font-size: 18px;
     font-weight: 600;
     font-family: "Ubuntu", sans-serif;
   }
+  .log-out-btn {
+    margin-left: -25px;
+  }
   .navbar-item-1 .signup-btn {
     margin-left: 30px;
   }
 }
 @media screen and (max-width: 350px) {
-  .navbar-1 .menu {
-    width: 120vw;
-    height: 120vh;
+  .max-width {
+    padding: 0px 15px;
   }
 }

@@ -2,7 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import { useLocation } from 'react-router'
+import { useNavigate } from 'react-router'
 const Navbar = () => {
+
+    const navigate = useNavigate();
+    const handleLogOut = () => {
+        localStorage.removeItem('token');
+        navigate('/login');
+    }
+
     const location = useLocation();
     const [toggleClass, settoggleClass] = useState(true);
 
@@ -19,8 +27,7 @@ const Navbar = () => {
                         <li className="navbar-item-1"><Link to="/" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/" ? "current" : ""}`}>Home</span></Link></li>
                         <li className="navbar-item-1"><Link to="/about" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/about" ? "current" : ""}`}>About</span></Link></li>
                         <li className="navbar-item-1"><Link to="/yournotes" onClick={() => settoggleClass(!toggleClass)}><span className={`navbar-text-item ${location.pathname === "/yournotes" ? "current" : ""}`}>MyNotes</span></Link></li>
-                        <li className="navbar-item-1"><button><Link to="/login">Login</Link></button></li>
-                        <li className="navbar-item-1"><button className="signup-btn"><Link to="/signup">SignUp</Link></button></li>
+                        {!localStorage.getItem('token') ? <><li className="navbar-item-1"><button><Link to="/login">Login</Link></button></li><li className="navbar-item-1"><button className="signup-btn"><Link to="/signup">SignUp</Link></button></li></> : <button onClick={handleLogOut} className="log-out-btn">Log-out</button>}
                     </ul>
                     <div className="menu-btn">
                         <i className=" fa fa-bars" onClick={() => settoggleClass(!toggleClass)}></i>

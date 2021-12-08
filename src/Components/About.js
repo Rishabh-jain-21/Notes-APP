@@ -5,7 +5,6 @@ const About = () => {
 
     return (
         <div className="notes-container">
-            <div style={{ paddingTop: "70px" }}></div>
             <h1>This is about page</h1>
         </div>
     )

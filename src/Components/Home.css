@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
 .form-container {
   margin-top: 20px;
   width: 70vw;
@@ -100,19 +101,19 @@ textarea {
 @media screen and (max-width: 330px) {
   .form-container,
   .notes-container {
-    width: 115vw;
+    width: 100vw;
   }
   .title-container {
-    width: 110vw;
+    width: 100vw;
     margin: 10px 2.5vw;
   }
   .title-id {
-    width: 110vw;
+    width: 90vw;
   }
   .tag-id {
-    width: 80vw;
+    width: 70vw;
   }
   #submit-id {
-    margin-left: 90vw;
+    margin-left: 80vw;
   }
 }

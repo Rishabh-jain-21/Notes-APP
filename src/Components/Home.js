@@ -1,11 +1,11 @@
 import React from 'react'
 import AddNote from './AddNote'
-const Home = () => {
+const Home = (props) => {
     document.title = "Notes - (Home)";
 
     return (
         <div>
-            <AddNote />
+            <AddNote showAlert={props.showAlert} />
         </div>
     )
 }

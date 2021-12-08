@@ -13,9 +13,10 @@ const JWT_SECRET = 'katrahi$hai'
 //Route : 1 creating a user , when user want to sign-in/register /api/auth/createUser
 router.post('/createUser', [body('email', 'Enter a valid email').isEmail(), body('name', 'Enter a valid name').isLength({ min: 3 }), body('password', 'Password must be atleast 5 character').isLength({ min: 5 }),], async (req, res) => {
     //sending obj as json on screen
+    let success = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ success, errors: errors.array() });
     }
 
     //wrapping everything in try-catch to handle some uneven errors
@@ -23,7 +24,7 @@ router.post('/createUser', [body('email', 'Enter a valid email').isEmail(), body
         //checking whether same email already exists
         let user = await User.findOne({ email: req.body.email });
         if (user) {
-            return res.status(404).json({ error: "Sorry!, a user with this email already exists" });
+            return res.status(404).json({ success, error: "Sorry!, a user with this email already exists" });
         }
 
         //Password hashing
@@ -44,7 +45,8 @@ router.post('/createUser', [body('email', 'Enter a valid email').isEmail(), body
         }
         //auth_data is token generated with jwt(jsonwebtoken); 
         const auth_data = jwt.sign(data, JWT_SECRET);
-        res.json({ auth_data });
+        success = true;
+        res.json({ success, auth_data });
 
         // console.log(jwt_data);
 
@@ -71,13 +73,15 @@ router.post('/login', [body('email', 'Enter a valid email').isEmail(), body('pas
         //user will have the data corresponding to that email 
         let user = await User.findOne({ email });
         if (!user) {
-            return res.status(404).json({ error: "Wrong credentials . Please , Check your credentials again" });
+            success = false;
+            return res.status(404).json({ success, error: "Wrong credentials . Please , Check your credentials again" });
         }
 
         //Password checking
         const passwordCompare = await bcrypt.compare(password, user.password);
         if (!passwordCompare) {
-            return res.status(400).json({ error: "Wrong credentials . Please , Check your credentials again" });
+            success = false;
+            return res.status(400).json({ success, error: "Wrong credentials . Please , Check your credentials again" });
         }
         // if every-thing is correct we are going to send webtoken
         const data = {
@@ -87,7 +91,8 @@ router.post('/login', [body('email', 'Enter a valid email').isEmail(), body('pas
         }
         //auth_data is token generated with jwt(jsonwebtoken); 
         const auth_data = jwt.sign(data, JWT_SECRET);
-        res.json({ auth_data });
+        success = true;
+        res.json({ success, auth_data });
 
 
     } catch (error) {

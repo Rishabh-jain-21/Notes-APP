@@ -5,7 +5,13 @@
 .container-1 {
   padding: 0px 15vw;
 }
-
+body {
+  background-image: url("https://t4.ftcdn.net/jpg/02/47/06/09/360_F_247060938_YW6aXHIhbrjV97kMzr9FZEmKqCbxvXRJ.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 @media screen and (max-width: 650px) {
   .container-1 {
     padding: 0px 10px;
