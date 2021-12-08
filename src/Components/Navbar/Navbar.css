@@ -23,7 +23,7 @@ html {
   /* background: crimson; */
   background-color: cadetblue;
   z-index: 998;
-  padding: 12px 0px;
+  padding: 6px 0px;
   position: fixed;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.5s ease;
@@ -42,7 +42,7 @@ html {
   font-size: 35px;
   font-weight: 600;
 }
-.navbar-item-1 input {
+/* .navbar-item-1 input {
   font-size: 18px;
   padding: 7px;
   border-radius: 10px;
@@ -53,8 +53,24 @@ html {
 }
 .navbar-item-1 input:focus {
   border: 2px solid grey;
+} */
+.navbar-item-1 button {
+  background-color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 30px;
 }
-
+.navbar-item-1 button a {
+  color: cadetblue;
+  font-weight: 500;
+}
+.navbar-item-1 button a:hover {
+  color: rgb(251, 255, 255);
+}
+.navbar-item-1 .signup-btn {
+  margin-left: 10px;
+}
 .navbar-1 .logo-1 a {
   text-decoration: none;
   border: none;
@@ -131,7 +147,20 @@ html {
   .navbar-1 .menu li a {
     display: inline-block;
     margin: 20px 0;
-    font-size: 25px;
+    /* font-size: 25px; */
+  }
+  .navbar-item-1 button {
+    background-color: cadetblue;
+  }
+  .navbar-item-1 button a {
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Ubuntu", sans-serif;
+  }
+  .navbar-item-1 .signup-btn {
+    margin-left: 30px;
   }
 }
 @media screen and (max-width: 350px) {

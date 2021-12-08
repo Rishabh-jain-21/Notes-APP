@@ -38,7 +38,7 @@ const AddNote = () => {
                     <label htmlFor="tag">Enter Tag</label>
                     <input type="text" name="tag" id="tag" className="tag-id" placeholder="Important" onChange={onchange} />
                 </div>
-                <input type="submit" value="+" id="submit-id" onClick={handleClick} />
+                <button disabled={notecontent.title.length < 5 || notecontent.description.length < 5} type="submit" id="submit-id" onClick={handleClick} >+ </button>
             </form>
             <Notes />
         </div>
